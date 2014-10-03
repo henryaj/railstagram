@@ -3,8 +3,6 @@ source 'https://rubygems.org'
 group :development, :test do 
   gem 'rspec-rails', '~> 3.0.0'
   gem 'capybara'
-  gem 'cucumber-rails', :require => false
-  gem 'cucumber-websteps'
   gem 'database_cleaner'
 end
 
