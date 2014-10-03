@@ -4,6 +4,7 @@ group :development, :test do
   gem 'rspec-rails', '~> 3.0.0'
   gem 'capybara'
   gem 'database_cleaner'
+  gem 'rspec-collection_matchers' 
 end
 
 gem 'haml-rails'
