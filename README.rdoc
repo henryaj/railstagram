@@ -1,3 +1,0 @@
-# Railstagram
-
-Instagram clone in Rails.
