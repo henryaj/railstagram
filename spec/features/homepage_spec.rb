@@ -61,4 +61,20 @@ feature "Homepage", :type => :feature do
 
   end
 
+  context 'signing out users' do
+
+    it 'a signed in user should be able to sign out' do
+      visit('/')
+      click_link("Sign up")
+      fill_in("Username", :with => "henryaj")
+      fill_in("Email", :with => "test@example.com")
+      fill_in("Password", :with => "12345678")
+      fill_in("Password confirmation", :with => "12345678")
+      click_button("Sign up")
+      click_link("Sign out")
+      expect(page).to have_content("Signed out successfully.")
+    end
+
+  end
+
 end
