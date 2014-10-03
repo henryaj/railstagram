@@ -6,6 +6,7 @@ group :development, :test do
   gem 'database_cleaner'
 end
 
+gem 'haml-rails'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.6'
