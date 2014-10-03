@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-feature "Homepages", :type => :feature do
+feature "Homepage", :type => :feature do
 
   context 'a visitor on the homepage' do
 

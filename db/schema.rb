@@ -11,7 +11,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141003105854) do
+ActiveRecord::Schema.define(version: 20141003144923) do
+
+  create_table "posts", force: true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "filepicker_url"
+    t.text     "caption"
+  end
 
   create_table "users", force: true do |t|
     t.datetime "created_at"

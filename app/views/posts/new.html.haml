@@ -1,0 +1,10 @@
+= filepicker_js_include_tag
+
+%h2 Post an image
+
+= form_for @post, url: {action: "create"}, html: {class: "nifty-form"} do |f|
+  = f.label :filepicker_url, "Upload image"
+  = f.filepicker_field :filepicker_url
+  = f.label :caption
+  = f.text_field :caption
+  = f.submit :submit
