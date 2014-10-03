@@ -21,7 +21,7 @@ feature "Homepages", :type => :feature do
 
     it 'clicking the sign up link should take a user to the sign up page' do
       click_link("Sign up")
-      expect(page).to have_content("Sign up for Railstagram")
+      expect(page).to have_content("Sign up")
     end
 
   end
