@@ -23,6 +23,10 @@ feature "Homepage", :type => :feature do
 
   context 'signing in users' do
 
+    before do
+      @user = create(:user1)
+    end
+
     before(:each) do
       visit '/'
     end
@@ -48,12 +52,8 @@ feature "Homepage", :type => :feature do
     end
 
     it 'if a user is signed in, they should see a sign out link and not log in or sign up links' do
-      click_link("Sign up")
-      fill_in("Username", :with => "henryaj")
-      fill_in("Email", :with => "test@example.com")
-      fill_in("Password", :with => "12345678")
-      fill_in("Password confirmation", :with => "12345678")
-      click_button("Sign up")
+      login_as @user
+      visit '/'
       expect(page).to have_content("Sign out")
       expect(page).not_to have_content("Sign up")
       expect(page).not_to have_content("Log in")
@@ -63,14 +63,13 @@ feature "Homepage", :type => :feature do
 
   context 'signing out users' do
 
+    before do
+      @user = create(:user1)
+    end
+
     it 'a signed in user should be able to sign out' do
+      login_as @user
       visit('/')
-      click_link("Sign up")
-      fill_in("Username", :with => "henryaj")
-      fill_in("Email", :with => "test@example.com")
-      fill_in("Password", :with => "12345678")
-      fill_in("Password confirmation", :with => "12345678")
-      click_button("Sign up")
       click_link("Sign out")
       expect(page).to have_content("Signed out successfully.")
     end
