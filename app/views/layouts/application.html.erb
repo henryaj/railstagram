@@ -5,15 +5,13 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
-    <!-- Latest compiled and minified CSS -->
-  <link rel="stylesheet" href="/stylesheets/bootstrap.css">
 
-  <!-- Optional theme -->
-  <link rel="stylesheet" href="/stylesheets/bootstrap-theme.css">
+  <%= stylesheet_link_tag "bootstrap" %>
+  <%= stylesheet_link_tag "bootstrap-theme" %>
+  <%= stylesheet_link_tag "styles" %>
 
   <link href='http://fonts.googleapis.com/css?family=Dancing+Script:700' rel='stylesheet' type='text/css'>
 
-  <link rel="stylesheet" href="/stylesheets/styles.css">
 
 </head>
 <body>
@@ -31,9 +29,6 @@
           <a class="navbar-brand" href="/">Railstagram</a>
         </div>
         <div class="navbar-collapse collapse">
-          <ul class="nav navbar-nav">
-            <li><a href="#">Home</a></li>
-          </ul>
           <ul class="nav navbar-nav navbar-right">
             <% unless user_signed_in? %>
               <li><%= link_to "Sign up", new_user_registration_path %></li>
@@ -47,8 +42,14 @@
       </div>
     </div>
 
-<p class="notice"><%= notice %></p>
-<p class="alert"><%= alert %></p>
+
+<% if notice %>
+  <p class="notice"><%= notice %></p>
+<% end %>
+<% if alert %>
+  <p class="alert"><%= alert %></p>
+<% end %>
+
 
 <div class="container">
 <%= yield %>
@@ -56,5 +57,6 @@
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+  <%= javascript_include_tag "masonry" %>
 </body>
 </html>
