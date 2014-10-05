@@ -13,10 +13,12 @@ feature "Homepage", :type => :feature do
       expect(page).to have_css('img')
     end
 
-    it 'clicking on a photo should bring up a modal', js: true do
+    xit 'clicking on a photo should bring up a modal', js: true do
+      @post = create(:post1)
       visit '/'
-      first('.item a').click_link
+      find('a')['data-target'].click_link
       expect(page).to have_css('.modal-dialog')
+      expect(page).to have_content('Posted by')
     end
 
     it 'should see a welcome banner' do
