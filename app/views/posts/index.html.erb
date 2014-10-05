@@ -7,7 +7,7 @@
       <div class="well" width="480px">
         <center><dl>
           <dd>
-            <a data-toggle="modal" data-target="#<%= post.id %>">
+            <a id="modal<%= post.id %>" data-toggle="modal" data-target="#<%= post.id %>">
               <%= filepicker_image_tag post.filepicker_url, w: 450, h: 450, fit: 'clip' %>
             </a>
           </dd>
@@ -37,10 +37,19 @@
             <h4><%= post.caption %></h4>
             <h5>Posted by <%= post.username %> on <%= post.created_at.strftime("%F") %></h5>
           </center>
+          <br />
+          <div class="input-group">
+            <input id="comment" type="text" class="form-control">
+            <span class="input-group-btn">
+              <button class="btn btn-default" type="button">Post comment</button>
+            </span>
+          </div>
+
+
         </div>
-        <div class="modal-footer">
+        <!-- <div class="modal-footer">
           <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        </div>
+        </div> -->
       </div>
     </div>
   </div>
