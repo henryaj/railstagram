@@ -1,4 +1,5 @@
 <center><h1>Welcome to Railstagram!</h1></center>
+<br /<br />
   <div class="col-md-3"></div>
 
   
@@ -12,10 +13,10 @@
             </a>
           </dd>
           <dd>
-            <%= post.caption %>
+            <h4><%= post.caption %></h4>
           </dd>
           <dd>
-            <%= post.username %>
+            <h5><%= post.username %></h5>
           </dd>
         </dl></center>
       </div>
@@ -35,8 +36,14 @@
           <center>
             <a href="<%= post.filepicker_url %>"><%= filepicker_image_tag post.filepicker_url, w: 500, h: 500, fit: 'clip' %></a>
             <h4><%= post.caption %></h4>
-            <h5>Posted by <%= post.username %> on <%= post.created_at.strftime("%F") %></h5>
+            <h5>Posted by <strong><%= post.username %></strong> on <strong><%= post.created_at.strftime("%F") %></strong></h5>
           </center>
+          <br />
+          <comments>
+            <% post.comments.each do |comment| %>
+              <div class="well"><strong>@<%= comment.username %></strong> – <%= comment.text %></div>
+            <% end %>
+          </comments>
           <br />
           <div class="input-group">
             <input id="comment" type="text" class="form-control">

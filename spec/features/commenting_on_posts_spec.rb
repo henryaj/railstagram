@@ -15,7 +15,7 @@ feature "Commenting on posts", :type => :feature do
 
   it 'when a user clicks on a photo, they should see a modal with a comment box and a submit button' do
     page.find('#modal1').click
-    fill_in('#comment', with: "great photo")
+    fill_in('input', with: "great photo")
     click_button("Post comment")
     expect(page).to have_content("great photo")
   end

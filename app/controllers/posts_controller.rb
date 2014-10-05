@@ -14,7 +14,13 @@ class PostsController < ApplicationController
     @post = Post.new(params[:post].permit(:caption, :filepicker_url))
     @post.username = current_user.username
     @post.save
-    redirect_to posts_path
+    respond_to do |format|
+        format.html { redirect_to post_path(@post) }
+      end
+  end
+
+  def show
+    @post = Post.find(params[:id])
   end
   
 end

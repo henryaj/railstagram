@@ -12,8 +12,10 @@
 
   <link href='http://fonts.googleapis.com/css?family=Dancing+Script:700' rel='stylesheet' type='text/css'>
 
+  <link href='http://fonts.googleapis.com/css?family=Signika:300,600' rel='stylesheet' type='text/css'>
+
   <% if Rails.env.test? %>
- <style type="text/css">
+   <style type="text/css">
     .modal.fade, .fade {
       -webkit-transition: opacity 0.01s;
       -moz-transition: opacity 0.01s;
@@ -22,7 +24,7 @@
       transition: opacity 0.01s;
     }
  </style>
-<%end%>
+  <%end%>
 
 </head>
 <body>
@@ -53,16 +55,15 @@
       </div>
     </div>
 
+<div class="container">
 
 <% if notice %>
-  <p class="notice"><%= notice %></p>
+  <div class="alert alert-success" role="alert"><%= notice %></div>
 <% end %>
 <% if alert %>
-  <p class="alert"><%= alert %></p>
+  <div class="alert alert-danger" role="alert"><%= alert %></div>
 <% end %>
 
-
-<div class="container">
 <%= yield %>
 </div>
 
