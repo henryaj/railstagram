@@ -5,10 +5,19 @@ feature "Homepage", :type => :feature do
   context 'a visitor on the homepage' do
 
     before do
+      @post = create(:post1)
       visit '/'
     end
 
-    xit 'should see the most recent photos posted'
+    it 'should see the most recent photos posted' do
+      expect(page).to have_css('img')
+    end
+
+    it 'clicking on a photo should bring up a modal', js: true do
+      visit '/'
+      first('.item a').click_link
+      expect(page).to have_css('.modal-dialog')
+    end
 
     it 'should see a welcome banner' do
       expect(page).to have_content("Welcome to Railstagram!")

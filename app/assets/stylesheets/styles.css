@@ -3,14 +3,12 @@ body {
   padding-top: 70px;
 }
 
+
 .navbar-brand {
   font-family: 'Dancing Script', cursive;
 }
 
-.navbar-default {
-  background-color: #1947A3;
-  border-color: #e7e7e7;
-}
+
 /*.navbar-default .navbar-brand {
   color: #777;
 }
