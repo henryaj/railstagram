@@ -12,13 +12,14 @@ $(document).ready ->
         $.post post_url, { comment: { text: comment }}, (response) ->
           $('comments').append('<div class="well"><strong>@' + response.username + '</strong> – ' + response.comment + '</div>')
           $('input').val('')
-        # $.ajax({
-        #   type: "POST",
-        #   url: post_url,
-        #   data: { comment: { text: comment }},
-        #   success: (data) ->
-        #     console.log(data.comment)
-        #     console.log(data)
-        #     return false
-        # })
-
+    $ ->
+      $('a.heart').click (event) ->
+        event.preventDefault()
+        comment_id = $(this)[0].id
+        post_id = $(this).parent().parent()[0].id
+        heart = $("input[postid|='" + $(this).attr('id') + "']").val()
+        post_url = '/posts/' + post_id + '/comments/' + comment_id + '/hearts'
+        $.post post_url, { heart: 1 }, (response) ->
+            console.log(response.number_hearts)
+            $('span#heart_count' + comment_id).text(response.number_hearts)
+    

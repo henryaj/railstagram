@@ -12,9 +12,9 @@
           <br />
           <comments>
             <% post.comments.each do |comment| %>
-              <div class="well"><strong>@<%= comment.username %></strong> – <%= comment.text %>
+              <div class="well" id="<%= post.id %>"><strong>@<%= comment.username %></strong> – <%= comment.text %>
               <% if user_signed_in? %>
-              <div class="pull-right"><strong><%= comment.hearts.count %></strong> <%= link_to "♥", new_post_comment_heart_path(post.id, comment.id) %></div>
+              <div class="pull-right"><strong><span id="heart_count<%= comment.id %>"><%= comment.hearts.count %></span></strong> <%= link_to "♥", new_post_comment_heart_path(post.id, comment.id), class: "heart", id: comment.id %></div>
               <% end %></div>
             <% end %>
           </comments>
