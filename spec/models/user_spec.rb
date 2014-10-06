@@ -22,4 +22,11 @@ RSpec.describe User, :type => :model do
     expect(user).to have_exactly(1).errors_on(:password_confirmation)
   end
 
+  it { should have_many(:posts)}
+  it { should have_many(:comments)}
+  it { should have_many(:hearts)}
+
+  it { should validate_presence_of(:username)}
+  it { should validate_presence_of(:email)}
+
 end
