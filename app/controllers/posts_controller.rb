@@ -12,7 +12,7 @@ class PostsController < ApplicationController
 
   def create
     @user = current_user
-    @post = @user.posts.new(params[:post].permit(:caption, :filepicker_url))
+    @post = @user.posts.new(params[:post].permit(:caption, :filepicker_url, :tag_list))
     @post.username = current_user.username
     @post.save
     redirect_to post_path(@post)

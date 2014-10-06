@@ -23,6 +23,13 @@ feature "Creating posts", :type => :feature do
       expect(page).to have_css('form')
     end
 
+    it 'a user can add tags to the post' do
+      login_as @user
+      visit '/'
+      click_link 'Post image'
+      expect(page).to have_field('Tags')
+    end
+
     xit 'a visitor can fill in the form and submit an image, after which they should see "image posted" and their username on the homepage' do
       Capybara.current_driver = :selenium
       visit '/'
