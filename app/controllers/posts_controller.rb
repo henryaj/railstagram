@@ -11,12 +11,11 @@ class PostsController < ApplicationController
   end
 
   def create
-    @post = Post.new(params[:post].permit(:caption, :filepicker_url))
+    @user = current_user
+    @post = @user.posts.new(params[:post].permit(:caption, :filepicker_url))
     @post.username = current_user.username
     @post.save
-    respond_to do |format|
-        format.html { redirect_to post_path(@post) }
-      end
+    redirect_to post_path(@post)
   end
 
   def show

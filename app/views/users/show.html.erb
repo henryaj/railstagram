@@ -1,0 +1,36 @@
+  <center>
+    <h1><%= "Profile page for #{@user.username}" %></h1>
+  </center>
+
+  <br /<br />
+  <div class="col-md-3"></div>
+
+<div class="col-md-6">
+    <% @posts.each do |post| %>
+      <div class="well" width="480px">
+        <center><dl>
+          <dd>
+            <a id="modal<%= post.id %>" data-toggle="modal" data-target="#<%= post.id %>">
+              <%= filepicker_image_tag post.filepicker_url, w: 450, h: 450, fit: 'clip' %>
+            </a>
+          </dd>
+          <dd>
+            <h4><%= post.caption %></h4>
+
+            <h5><strong>Posted on <%= post.created_at.strftime("%F") %></strong></h5>
+          </center>
+          <comments>
+            <% post.comments.each do |comment| %>
+              <div class="well"><strong>@<%= comment.username %></strong> – <%= comment.text %></div>
+            <% end %>
+          </comments>
+
+          </dd>
+        </dl></center>
+      </div>
+    <% end %>
+
+
+      </div>
+
+  <div class="col-md-3"></div>
