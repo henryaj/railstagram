@@ -10,8 +10,7 @@
             <h4><%= post.caption %></h4>
           </dd>
           <dd>
-            <% uid = post.user_id %>
-            <% user = User.find(id="#{uid}") %>
+            <%= user = User.find(post.user_id) %>
             <h5><%= link_to post.username, user_path(post.user_id) %></h5>
           </dd>
         </dl></center>

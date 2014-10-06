@@ -5,6 +5,7 @@ feature "Homepage", :type => :feature do
   context 'a visitor on the homepage' do
 
     before do
+      @user = create(:user1)
       @post = create(:post1)
       visit '/'
     end
@@ -16,7 +17,7 @@ feature "Homepage", :type => :feature do
     it 'clicking on a photo should bring up a modal' do
       page.find('#modal1').click
       expect(page).to have_css('.modal-dialog')
-      expect(page).to have_content('Posted by')
+      expect(page).to have_content('Posted by henry')
     end
 
     it 'should see a welcome banner' do
@@ -34,6 +35,7 @@ feature "Homepage", :type => :feature do
 
     before do
       @user = create(:user1)
+      @post = create(:post1)
     end
 
     before(:each) do

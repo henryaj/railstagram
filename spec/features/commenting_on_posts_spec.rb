@@ -3,6 +3,7 @@ require 'rails_helper'
 feature "Commenting on posts", :type => :feature do 
 
   before do
+      @user = create(:user1)
       @post = create(:post1)
   end
 
