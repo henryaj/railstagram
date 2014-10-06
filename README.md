@@ -7,8 +7,8 @@ Instagram clone in Rails.
 
 ## Technologies
 
-* Rails
+* Ruby on Rails
 * Postgres
-* Devise
-* filepicker.io
-* RSpec, Capybara, Selenium for testing
+* Devise and OAuth
+* filepicker.io's lovely file picker modal
+* RSpec, Capybara, Selenium, Factory Girl and [shoulda](https://github.com/thoughtbot/shoulda) for testing
