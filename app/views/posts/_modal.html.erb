@@ -1,0 +1,37 @@
+<% @posts.each do |post| %>
+
+  <div class="modal fade" id="<%= post.id %>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-body">
+          <center>
+            <a href="<%= post.filepicker_url %>"><%= filepicker_image_tag post.filepicker_url, w: 500, h: 500, fit: 'clip' %></a>
+            <h4><%= post.caption %></h4>
+            <h5>Posted by <strong><%= link_to post.username, user_path(post.user_id) %></strong> on <strong><%= post.created_at.strftime("%F") %></strong></h5>
+          </center>
+          <br />
+          <comments>
+            <% post.comments.each do |comment| %>
+              <div class="well"><strong>@<%= comment.username %></strong> – <%= comment.text %></div>
+            <% end %>
+          </comments>
+          <br />
+          <% if user_signed_in? %>
+          <div class="input-group">
+            <input postid="<%= post.id %>" type="text" class="form-control">
+            <span class="input-group-btn">
+              <button class="btn btn-default" type="button" id="<%= post.id %>">Post comment</button>
+            </span>
+          </div>
+          <% end %>
+
+
+        </div>
+        <!-- <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div> -->
+      </div>
+    </div>
+  </div>
+
+<% end %>

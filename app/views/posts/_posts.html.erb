@@ -1,0 +1,19 @@
+<% @posts.each do |post| %>
+      <div class="well" width="480px">
+        <center><dl>
+          <dd>
+            <a id="modal<%= post.id %>" data-toggle="modal" data-target="#<%= post.id %>">
+              <%= filepicker_image_tag post.filepicker_url, w: 450, h: 450, fit: 'clip' %>
+            </a>
+          </dd>
+          <dd>
+            <h4><%= post.caption %></h4>
+          </dd>
+          <dd>
+            <% uid = post.user_id %>
+            <% user = User.find(id="#{uid}") %>
+            <h5><%= link_to post.username, user_path(post.user_id) %></h5>
+          </dd>
+        </dl></center>
+      </div>
+    <% end %>
