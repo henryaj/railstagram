@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-feature "Hearting comments", :type => :feature do
+feature "Hearting comments", :type => :feature, js:true do
 
   before do
     visit '/'
