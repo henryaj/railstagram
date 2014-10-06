@@ -47,9 +47,9 @@
           <br />
           <% if user_signed_in? %>
           <div class="input-group">
-            <input id="comment" type="text" class="form-control">
+            <input postid="<%= post.id %>" type="text" class="form-control">
             <span class="input-group-btn">
-              <button class="btn btn-default" type="button">Post comment</button>
+              <button class="btn btn-default" type="button" id="<%= post.id %>">Post comment</button>
             </span>
           </div>
           <% end %>

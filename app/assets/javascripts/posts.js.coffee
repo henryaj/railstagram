@@ -6,8 +6,9 @@ $(document).ready ->
     $('button').preventDefault
     $ ->
       $('button').click ->
-        comment = $('input').val()
-        post_url = '/posts/' + $( "div[class*='fade']" )[0].id + '/comments'
+        console.log($("input[postid|='" + $(this).attr('id') + "']").val())
+        comment = $("input[postid|='" + $(this).attr('id') + "']").val()
+        post_url = '/posts/' + $(this).attr('id') + '/comments'
         $.post post_url, { comment: { text: comment }}, (response) ->
           $('comments').append('<div class="well"><strong>@' + response.username + '</strong> – ' + response.comment + '</div>')
           $('input').val('')
