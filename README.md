@@ -16,3 +16,4 @@ Features live commenting using AJAX, a neat file picker that ties in with Facebo
 * Devise and OAuth
 * filepicker.io's lovely file picker modal
 * RSpec, Capybara, Selenium, Factory Girl and [shoulda](https://github.com/thoughtbot/shoulda) for testing
+* Stripe for payments (just in test mode for now)
