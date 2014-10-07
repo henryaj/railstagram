@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
 
-  before_filter :authenticate_user!, only: [:new, :edit, :update, :destroy]
+  before_filter :authenticate_user!, except: [:index, :show]
 
   def index
     @posts = Post.all
@@ -15,7 +15,7 @@ class PostsController < ApplicationController
     @post = @user.posts.new(params[:post].permit(:caption, :filepicker_url, :tag_list))
     @post.username = current_user.username
     @post.save
-    redirect_to post_path(@post)
+    redirect_to root
   end
 
   def show
