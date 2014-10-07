@@ -11,6 +11,8 @@ group :development, :test do
   gem 'factory_girl_rails'
 end
 
+gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
+
 gem 'haml-rails'
 
 gem 'devise'
