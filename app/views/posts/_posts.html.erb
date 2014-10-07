@@ -27,6 +27,9 @@
             <% end %>
           </dd>
       </dl>
+      <% if user_signed_in? %>
+      <%= render "stripe" %>
+      <% end %>
       </div>
     </div>
     <% end %>
