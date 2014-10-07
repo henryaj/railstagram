@@ -15,7 +15,7 @@ class PostsController < ApplicationController
     @post = @user.posts.new(params[:post].permit(:caption, :filepicker_url, :tag_list))
     @post.username = current_user.username
     @post.save
-    redirect_to root
+    redirect_to posts_path
   end
 
   def show
