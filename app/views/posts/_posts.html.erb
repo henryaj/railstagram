@@ -1,4 +1,6 @@
 <% @posts.each do |post| %>
+    <div class="row">
+      <div class="col-md-9">
       <div class="well" width="480px">
         <center><dl>
           <dd>
@@ -6,12 +8,24 @@
               <%= filepicker_image_tag post.filepicker_url, w: 450, h: 450, fit: 'clip' %>
             </a>
           </dd>
-          <dd>
-            <h4><%= post.caption %></h4>
-          </dd>
-          <dd>
-            <h5><%= link_to post.username, user_path(post.user_id) %></h5>
-          </dd>
         </dl></center>
       </div>
+      </div>
+      <div class="col-md-3">
+      <dl>
+      <dd><h4><%= post.caption %></h4>
+      </dd>
+      <dd>
+            <h5><%= link_to post.username, user_path(post.user_id) %></h5>
+          </dd>
+          <dd>
+          <% if post.tags.any? %>
+            <h5><% post.tags.each do |tag| %>
+              #<%= tag %>  
+            <% end %></h5>
+            <% end %>
+          </dd>
+      </dl>
+      </div>
+    </div>
     <% end %>
