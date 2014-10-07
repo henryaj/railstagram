@@ -13,10 +13,11 @@
       </div>
       <div class="col-md-3">
       <dl>
-      <dd><h4><%= post.caption %></h4>
+      <dd><h3><%= post.caption %></h3>
       </dd>
+      <dd><h5><%= time_ago_in_words(post.created_at) %> ago</h5></dd>
       <dd>
-            <h5><%= link_to post.username, user_path(post.user_id) %></h5>
+            <h4><%= link_to post.username, user_path(post.user_id) %></h4>
           </dd>
           <dd>
           <% if post.tags.any? %>
