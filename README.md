@@ -1,6 +1,4 @@
 ![Screenshot - main page](screenshot1.jpg)
-![Screenshot - comments](screenshot2.jpg)
-![Screenshot - payments](screenshot3.jpg)
 
 # Railstagram
 
