@@ -1,6 +1,6 @@
 ![Screenshot - main page](screenshot1.jpg)
 
-# Railstagram
+# Railstagram [![Code Climate](https://codeclimate.com/github/henryaj/railstagram/badges/gpa.svg)](https://codeclimate.com/github/henryaj/railstagram)
 
 Instagram clone in Rails.
 
