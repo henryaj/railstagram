@@ -15,6 +15,5 @@
 /log/*.log
 /tmp
 
-/config/secrets.yml
 
 /config/initializers/stripe.rb
