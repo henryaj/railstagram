@@ -8,8 +8,7 @@ Rails.application.load_tasks
 task default: %w[travis]
 
 task :travis do
-  system("rake db:create db:migrate")
-  ["rspec", "cucumber"].each do |cmd|
+  ["rake db:create", "rake db:migrate", "rspec", "cucumber"].each do |cmd|
     puts "Starting to run #{cmd}..."
     system("export DISPLAY=:99.0 && bundle exec #{cmd}")
     raise "#{cmd} failed!" unless $?.exitstatus == 0
