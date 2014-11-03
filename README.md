@@ -1,7 +1,7 @@
-![Screenshot - main page](screenshot1.jpg)
-
 | [*Makers Academy*](http://www.makersacademy.com) | Week 9 |
 | ------------------------------------------------ | ------ |
+
+![Screenshot - main page](screenshot1.jpg)
 
 # Railstagram [![Code Climate](https://codeclimate.com/github/henryaj/railstagram/badges/gpa.svg)](https://codeclimate.com/github/henryaj/railstagram)
 
